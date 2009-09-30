@@ -1,0 +1,20 @@
+= dopis_online_client
+
+DopisOnline je sluzba Ceske posty, s.p., ktera "umoznuje zakaznikovi podani dokumentu v elektronické formě (formát PDF), přičemž dodání je uskutečněno formou klasického vytištěného dopisu."
+
+Vice informaci na https://online.postservis.cz/Download/DopisOnline/DopisOnline.pdf
+
+== Usage:
+
+    require 'lib/dopis_online_client'
+
+    DopisOnlineClient::Request.base_uri 'http://localhost:8000'    
+    DopisOnlineClient::Request.auth('jmeno','heslo')
+    
+    DopisOnlineClient::Request.send(
+      :pdf_file_path=>"letter.pdf"
+    )
+
+== Copyright
+
+Copyright (c) 2009 Jiri Kubicek, KRAXNET s.r.o.. See LICENSE for details.

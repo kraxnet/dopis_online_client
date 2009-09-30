@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<zakazka>
+<soubor type="string">testing.pdf</soubor>
+<pocetstranek type="integer">1</pocetstranek>
+<kodobjednavky type="string">20090608050001</kodobjednavky>
+<podacicislo type="string"></podacicislo>
+<datumpodani type="date">2009-06-08</datumpodani>
+<podaciposta type="string">370 20</podaciposta>
+<cena mena="CZK" type="decimal">14.05</cena>
+<barvatisku type="integer">0</barvatisku>
+<typvyplatneho type="integer">67</typvyplatneho>
+</zakazka>
