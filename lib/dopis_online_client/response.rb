@@ -13,38 +13,50 @@ module DopisOnlineClient
       @delegate.send(name, *args, &block)
     end
 
+    # Byl dopis úspěšně přijat k odeslání?
     def success?
       code==200 && !has_key?("chyba") && has_key?("zakazka")
     end
 
+    # Jméno odeslaného souboru
     def filename
       success_result["soubor"]
     end
 
+    # Počet stránek
     def pages_count
       success_result["pocetstranek"].to_i
     end
 
+    # Kód objednávky
     def order_code
       success_result["kodobjednavky"].to_i
     end
 
+    # Podací číslo
     def tracking_number
       success_result["podacicislo"]
     end
 
+    # Datum podání
     def posting_date
       success_result["datumpodani"]
     end
 
+    # PSČ podací pošty
     def posting_zip
       success_result["podaciposta"]
     end
 
+    # Cena
     def price
       success_result["cena"]
     end
 
+    # Barva tisku
+    #
+    # * Barevný <tt>true</tt>
+    # * černobílý <tt>false</tt>
     def color
       success_result["barvatisku"]=="1"
     end
@@ -53,10 +65,12 @@ module DopisOnlineClient
       success_result["typvyplatneho"]
     end
 
+    # Popis chyby
     def failure_message
       failure_result["popis"]
     end
 
+    # Kód chyby
     def failure_code
       failure_result["kod"].to_i
     end
