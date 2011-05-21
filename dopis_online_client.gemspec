@@ -18,4 +18,18 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
+
+  s.extra_rdoc_files  = [ "README.rdoc", "LICENSE" ]
+  s.rdoc_options      = [ "--charset=UTF-8" ]
+
+  s.required_rubygems_version = ">= 1.3.6"
+
+  s.add_dependency "rake",        "~> 0.8.0"
+  s.add_dependency "bundler",     "~> 1.0.0"
+  s.add_dependency "httparty"
+
+  s.add_development_dependency "turn"
+  s.add_development_dependency "shoulda"
+  s.add_development_dependency "sdoc"
+  s.add_development_dependency "rcov"
 end

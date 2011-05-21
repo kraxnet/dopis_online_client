@@ -1,11 +1,7 @@
 require 'rubygems'
 require 'test/unit'
 require 'shoulda'
-require 'matchy'
+require 'turn' unless ENV["TM_FILEPATH"]
 
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-$LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'dopis_online_client'
 
-class Test::Unit::TestCase
-end

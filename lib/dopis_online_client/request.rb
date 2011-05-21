@@ -1,13 +1,11 @@
-require 'httpclient'
-
 module DopisOnlineClient
   class Request
-    
+
+    include HTTParty
+
     attr_reader :username, :password, :color, :postage_type, :payment_type, :response_format, :pdf_file
   
     def initialize(params)
-      @username = params[:username]
-      @password = params[:password]
       @color = params[:color] || 0 # cernobile
       @postage_type = params[:postage_type] || 66 # obycejne
       @payment_type = params[:payment_type] || 0 # fakturou
@@ -16,9 +14,7 @@ module DopisOnlineClient
     end
   
     def deliver
-      client = HTTPClient.new
-      client.ssl_config.verify_mode=OpenSSL::SSL::VERIFY_NONE
-      response = client.post @@base_uri, {
+      response = self.class.post '', {
         :user => @@username,
         :passwd => @@password,
         :barvatisku => @color,
@@ -27,7 +23,7 @@ module DopisOnlineClient
         :typvystupu => @format.to_s,
         :soubor => File.new(@pdf_file_path)
       }
-      parsed_response = parse_response(response.body.content)
+      parsed_response = parse_response(response.body)
       DopisOnlineClient::Response.new(parsed_response, response.body, response.code)
     end
   
@@ -43,10 +39,6 @@ module DopisOnlineClient
   
     def self.send(params)
       @request = new(params).deliver
-    end
-  
-    def self.base_uri(uri)
-      @@base_uri=uri
     end
   
     def self.auth(username, password)
