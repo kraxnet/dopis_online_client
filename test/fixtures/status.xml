@@ -1,0 +1,35 @@
+<dopisonline>
+ <zakazka id="20110521067226">
+  <podacicislo type="string">neni</podacicislo>
+  <pocetstranek type="integer">1</pocetstranek>
+  <datumpodani type="datetime">2011-05-21 15:13:57</datumpodani>
+  <cena mena="CZK" type="decimal">12.60</cena>
+  <barvatisku type="integer">0</barvatisku>
+  <platba type="integer">0</platba>
+  <typvyplatneho type="integer">66</typvyplatneho>
+  <zpracovani type="integer">50</zpracovani>
+  <stav type="integer">0</stav>
+ </zakazka>
+ <zakazka id="20110521067227">
+  <podacicislo type="string">neni</podacicislo>
+  <pocetstranek type="integer">1</pocetstranek>
+  <datumpodani type="datetime">2011-05-21 15:14:25</datumpodani>
+  <cena mena="CZK" type="decimal">12.60</cena>
+  <barvatisku type="integer">0</barvatisku>
+  <platba type="integer">0</platba>
+  <typvyplatneho type="integer">66</typvyplatneho>
+  <zpracovani type="integer">50</zpracovani>
+  <stav type="integer">0</stav>
+ </zakazka>
+ <zakazka id="20110521067228">
+  <podacicislo type="string">neni</podacicislo>
+  <pocetstranek type="integer">1</pocetstranek>
+  <datumpodani type="datetime">2011-05-21 15:15:41</datumpodani>
+  <cena mena="CZK" type="decimal">12.60</cena>
+  <barvatisku type="integer">0</barvatisku>
+  <platba type="integer">0</platba>
+  <typvyplatneho type="integer">66</typvyplatneho>
+  <zpracovani type="integer">50</zpracovani>
+  <stav type="integer">0</stav>
+ </zakazka>
+</dopisonline>

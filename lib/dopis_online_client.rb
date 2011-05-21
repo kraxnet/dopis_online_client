@@ -1,7 +1,8 @@
 require 'httmultiparty'
 
-require File.dirname(__FILE__) + '/dopis_online_client/request.rb'
-require File.dirname(__FILE__) + '/dopis_online_client/response.rb'
+require 'dopis_online_client/request'
+require 'dopis_online_client/response'
+require 'dopis_online_client/status_request'
 
 module DopisOnlineClient
 
