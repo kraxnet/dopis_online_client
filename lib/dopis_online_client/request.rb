@@ -15,7 +15,7 @@ module DopisOnlineClient
     end
   
     def deliver
-      response = self.class.post '', {
+      response = self.class.post '/dopisonline.php', {
         :user => DopisOnlineClient.username,
         :passwd => DopisOnlineClient.password,
         :barvatisku => @color,
