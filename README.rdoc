@@ -8,7 +8,7 @@ Vice informaci na https://online.postservis.cz/Download/DopisOnline/DopisOnline.
 
     require 'lib/dopis_online_client'
 
-    DopisOnlineClient::Request.base_uri 'http://localhost:8000'    
+    DopisOnlineClient.base_uri 'http://localhost:8000'
     DopisOnlineClient::Request.auth('jmeno','heslo')
     
     DopisOnlineClient::Request.send(

@@ -11,6 +11,7 @@ module DopisOnlineClient
       @payment_type = params[:payment_type] || 0 # fakturou
       @format = params[:format] || :xml
       @pdf_file_path = params[:pdf_file_path]
+      self.class.base_uri DopisOnlineClient.base_uri
     end
   
     def deliver
