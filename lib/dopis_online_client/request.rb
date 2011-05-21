@@ -16,8 +16,8 @@ module DopisOnlineClient
   
     def deliver
       response = self.class.post '', {
-        :user => @@username,
-        :passwd => @@password,
+        :user => DopisOnlineClient.username,
+        :passwd => DopisOnlineClient.password,
         :barvatisku => @color,
         :typvyplatneho => @postage_type,
         :typuhrady => @payment_type,
@@ -40,11 +40,6 @@ module DopisOnlineClient
   
     def self.send(params)
       @request = new(params).deliver
-    end
-  
-    def self.auth(username, password)
-      @@username=username
-      @@password=password
     end
 
   end

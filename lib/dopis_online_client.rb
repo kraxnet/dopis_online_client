@@ -9,5 +9,18 @@ module DopisOnlineClient
     path ? @base_uri = path : @base_uri
   end
 
+  def self.auth(username, password)
+    @username=username
+    @password=password
+  end
+
+  def self.username
+    @username
+  end
+
+  def self.password
+    @password
+  end
+
 end
 
