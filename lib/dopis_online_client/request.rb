@@ -1,7 +1,7 @@
 module DopisOnlineClient
   class Request
 
-    include HTTParty
+    include HTTMultiParty
 
     attr_reader :username, :password, :color, :postage_type, :payment_type, :response_format, :pdf_file
   
@@ -15,7 +15,7 @@ module DopisOnlineClient
     end
   
     def deliver
-      response = self.class.post '/dopisonline.php', {
+      response = self.class.post '/dopisonline.php', :body => {
         :user => DopisOnlineClient.username,
         :passwd => DopisOnlineClient.password,
         :barvatisku => @color,
