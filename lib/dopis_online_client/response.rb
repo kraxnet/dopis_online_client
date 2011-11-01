@@ -1,3 +1,5 @@
+require 'crack'
+
 module DopisOnlineClient
   class Response
     attr_accessor :body, :code
