@@ -7,7 +7,7 @@ module DopisOnlineClient
   
     def initialize(params)
       @color = params[:color] || 0 # cernobile
-      @postage_type = params[:postage_type] || 66 # obycejne
+      @postage_type = params[:postage_type] || 195 # obycejne
       @payment_type = params[:payment_type] || 0 # fakturou
       @format = params[:format] || :xml
       @pdf_file_path = params[:pdf_file_path]
