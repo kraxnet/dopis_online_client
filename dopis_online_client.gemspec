@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = ">= 1.3.6"
 
   s.add_dependency "rake",        ">= 0.8.0"
-  s.add_dependency "bundler",     ">= 1.0.0"
+  s.add_dependency "bundler",     ">= 1.0"
   s.add_dependency "httmultiparty"
   s.add_dependency "crack"
 
