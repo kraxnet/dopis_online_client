@@ -33,7 +33,7 @@ module DopisOnlineClient
 
     def load_response_from_file(filename)
       body = File.read(File.join(File.dirname(__FILE__),'../fixtures',filename))
-      parsed_response = Crack::XML.parse(body)
+      parsed_response = MultiXml.parse(body)
       DopisOnlineClient::Response.new(parsed_response, body, 200)
     end
 
