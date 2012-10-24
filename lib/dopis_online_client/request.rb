@@ -4,7 +4,7 @@ module DopisOnlineClient
     include HTTMultiParty
 
     attr_reader :username, :password, :color, :postage_type, :payment_type, :response_format, :pdf_file
-  
+
     def initialize(params)
       @color = params[:color] || 0 # cernobile
       @postage_type = params[:postage_type] || 195 # obycejne
@@ -13,7 +13,7 @@ module DopisOnlineClient
       @pdf_file_path = params[:pdf_file_path]
       self.class.base_uri DopisOnlineClient.base_uri
     end
-  
+
     def deliver
       response = self.class.post '/dopisonline.php', :body => {
         :user => DopisOnlineClient.username,
@@ -27,7 +27,7 @@ module DopisOnlineClient
       parsed_response = parse_response(response.body)
       DopisOnlineClient::Response.new(parsed_response, response.body, response.code)
     end
-  
+
     def parse_response(body)
       return nil if body.nil? or body.empty?
       case @format
@@ -37,7 +37,7 @@ module DopisOnlineClient
         body
       end
     end
-  
+
     def self.send(params)
       @request = new(params).deliver
     end
