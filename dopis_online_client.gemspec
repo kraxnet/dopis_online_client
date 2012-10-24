@@ -27,11 +27,11 @@ Gem::Specification.new do |s|
   s.add_dependency "rake",        ">= 0.8.0"
   s.add_dependency "bundler",     ">= 1.0"
   s.add_dependency "httmultiparty"
-  s.add_dependency "crack"
+  s.add_dependency "multi_xml"
 
   s.add_development_dependency "turn"
   s.add_development_dependency "shoulda"
   s.add_development_dependency "sdoc"
-  s.add_development_dependency "rcov"
+  s.add_development_dependency "simplecov"
   s.add_development_dependency "fakeweb"
 end

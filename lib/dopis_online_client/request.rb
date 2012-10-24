@@ -31,11 +31,11 @@ module DopisOnlineClient
     def parse_response(body)
       return nil if body.nil? or body.empty?
       case @format
-        when :xml
-          Crack::XML.parse(body)
-        else
-          body
-        end
+      when :xml
+        MultiXml.parse(body)
+      else
+        body
+      end
     end
   
     def self.send(params)
