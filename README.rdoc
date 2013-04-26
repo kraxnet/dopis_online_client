@@ -1,5 +1,7 @@
 = dopis_online_client
 
+[![Build Status](https://travis-ci.org/kraxnet/dopis_online_client.png)](https://travis-ci.org/kraxnet/dopis_online_client)
+
 DopisOnline je sluzba Ceske posty, s.p., ktera "umoznuje zakaznikovi podani dokumentu v elektronické formě (formát PDF), přičemž dodání je uskutečněno formou klasického vytištěného dopisu."
 
 Vice informaci na https://online.postservis.cz/Download/DopisOnline/DopisOnline.pdf
