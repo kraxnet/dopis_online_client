@@ -29,9 +29,12 @@ Gem::Specification.new do |gem|
   gem.add_dependency "httmultiparty"
   gem.add_dependency "crack"
 
+  if RUBY_VERSION < "1.9.0"
+    gem.add_development_dependency "rcov"
+    gem.add_development_dependency "shoulda-matchers", "1.4.2"
+  end
   gem.add_development_dependency "turn"
   gem.add_development_dependency "shoulda"
   gem.add_development_dependency "sdoc"
-  gem.add_development_dependency "rcov" if RUBY_VERSION < "1.9.0"
   gem.add_development_dependency "fakeweb"
 end
