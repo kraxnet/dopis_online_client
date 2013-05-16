@@ -1,12 +1,12 @@
-= dopis_online_client
+# dopis_online_client
 
 [![Build Status](https://travis-ci.org/kraxnet/dopis_online_client.png)](https://travis-ci.org/kraxnet/dopis_online_client)
 
-DopisOnline je sluzba Ceske posty, s.p., ktera "umoznuje zakaznikovi podani dokumentu v elektronické formě (formát PDF), přičemž dodání je uskutečněno formou klasického vytištěného dopisu."
+DopisOnline je služba České pošty, s.p., která "umožnuje zákazníkovi podání dokumentu v elektronické formě (formát PDF), přičemž dodáná je uskutečněno formou klasického vytištěného dopisu."
 
 Vice informaci na https://online.postservis.cz/Download/DopisOnline/DopisOnline.pdf
 
-== Usage:
+## Usage:
 
     require 'lib/dopis_online_client'
 
@@ -17,6 +17,6 @@ Vice informaci na https://online.postservis.cz/Download/DopisOnline/DopisOnline.
       :pdf_file_path=>"letter.pdf"
     )
 
-== Copyright
+## Copyright
 
-Copyright (c) 2009 Jiri Kubicek, KRAXNET s.r.o.. See LICENSE for details.
+Copyright (c) 2009-2013 Jiří Kubíček, KRAXNET s.r.o.. See LICENSE for details.
