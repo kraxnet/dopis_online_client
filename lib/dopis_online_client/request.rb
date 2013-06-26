@@ -1,36 +1,64 @@
+require 'builder'
+require 'base64'
+
 module DopisOnlineClient
   class Request
 
     include HTTMultiParty
 
-    attr_reader :username, :password, :color, :postage_type, :payment_type, :response_format, :pdf_file
+    DEFAULTS = {:postage_type => 195, # common
+                :coupon_type => 0, # do not print
+                :print_type => 0, # one-sided print
+                :sender_type => 2, # from 1st page of the document
+                :recipient_type => 2, # from 1st page of the document
+                :format => :xml
+    }
 
-    def initialize(params)
-      @color = params[:color] || 0 # cernobile
-      @postage_type = params[:postage_type] || 195 # obycejne
-      @payment_type = params[:payment_type] || 0 # fakturou
-      @format = params[:format] || :xml
-      @pdf_file_path = params[:pdf_file_path]
+
+    attr_reader :pdf_file_path, :options
+
+    # Public: Sends the request to the service
+    #
+    # pdf_file_path - string with the path to the pdf file, that will be send
+    # params - hash with the additional parameters
+    #
+    # Returns new DopisOnlineClient::Response
+    #
+    def self.send(pdf_file_path, params = {})
+      @request = new(pdf_file_path, params).deliver
+    end
+
+    # Public: Initializes library
+    #
+    # pdf_file_path - string with the path to the pdf file, that will be send
+    # params - hash with the additional parameters
+    #
+    def initialize(pdf_file_path, params = {})
+      params.merge!(DEFAULTS)
+      @options = OpenStruct.new(params)
+      @pdf_file_path = pdf_file_path
       self.class.base_uri DopisOnlineClient.base_uri
     end
 
+    # Public: Delivers payload to service
+    #
+    # Returns new DopisOnlineClient::Response
+    #
     def deliver
-      response = self.class.post '/dopisonline.php', :body => {
-        :user => DopisOnlineClient.username,
-        :passwd => DopisOnlineClient.password,
-        :barvatisku => @color,
-        :typvyplatneho => @postage_type,
-        :typuhrady => @payment_type,
-        :typvystupu => @format.to_s,
-        :soubor => File.new(@pdf_file_path)
-      }
+      response = self.class.post '/dopisonline/donApi.php', :body => body
       parsed_response = parse_response(response.body)
       DopisOnlineClient::Response.new(parsed_response, response.body, response.code)
     end
 
+    # Internal: parses the body of the response
+    #
+    # body - string with service response
+    #
+    # Returns nil if the body is not present
+    #
     def parse_response(body)
       return nil if body.nil? or body.empty?
-      case @format
+      case options.format
       when :xml
         MultiXml.parse(body)
       else
@@ -38,9 +66,35 @@ module DopisOnlineClient
       end
     end
 
-    def self.send(params)
-      @request = new(params).deliver
-    end
+    # Internal: returns hash with request body
+    #
+    # Returns Hash with request body
+    #
+    def body
+      xml = Builder::XmlMarkup.new( :indent => 2 )
+      xml.instruct! :xml, :encoding => "UTF-8"
+      xml.dataroot do |dataroot|
+        dataroot.tiskpoukazky  options.coupon_type
+        dataroot.typods  options.sender_type
+        dataroot.typadr  options.recipient_type
+        dataroot.typvyplatneho  options.postage_type
+        dataroot.typvystupu  options.format.to_s
+        dataroot.soubory  do |soubory|
+          soubory.soubor(:mimeType => "", :name => @pdf_file_path.split("/").last) do |soubor|
+            soubor.dataSoubor Base64.encode64(File.read(@pdf_file_path))
+          end
+        end
+      end
 
+      xml_file = Tempfile.new(["DopisOnlineNew_1_1", ".xml"])
+      xml_file.write xml
+      xml_file.flush
+
+      {
+        :user => DopisOnlineClient.username,
+        :passwd => DopisOnlineClient.password,
+        :soubor => xml_file
+      }
+    end
   end
 end

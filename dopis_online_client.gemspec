@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   s.name        = "dopis_online_client"
   s.version     = DopisOnlineClient::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Jiri Kubicek"]
-  s.email       = ["jiri.kubicek@kraxnet.cz"]
+  s.authors     = ["Jiri Kubicek", "Josef Pospisil"]
+  s.email       = ["jiri.kubicek@kraxnet.cz", "josef.pospisil@laststar.eu"]
   s.homepage    = "http://github.com/kraxnet/dopis_online_client"
   s.summary     = %q{Dopis Online Client Library}
   s.description = %q{Klientská knihovna pro práci se službou Dopis Online České pošty}
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
   s.add_dependency "bundler",     ">= 1.0"
   s.add_dependency "httmultiparty"
   s.add_dependency "multi_xml"
+  s.add_dependency "builder"
 
   s.add_development_dependency "turn"
   s.add_development_dependency "shoulda"
