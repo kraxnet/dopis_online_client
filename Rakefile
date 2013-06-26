@@ -29,7 +29,7 @@ begin
   require 'sdoc'
 rescue LoadError
 end
-require 'rake/rdoctask'
+require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "Tire"
