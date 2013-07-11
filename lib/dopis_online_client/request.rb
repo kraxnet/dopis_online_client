@@ -87,12 +87,13 @@ module DopisOnlineClient
       end
 
       xml_file = Tempfile.new(["DopisOnlineNew_1_1", ".xml"])
-      xml_file.write xml
+      xml_file.write xml.target!
       xml_file.flush
+      xml_file.rewind
 
       {
         :user => DopisOnlineClient.username,
-        :passwd => DopisOnlineClient.password,
+        :password => DopisOnlineClient.password,
         :soubor => xml_file
       }
     end
