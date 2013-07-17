@@ -11,7 +11,8 @@ module DopisOnlineClient
                 :coupon_type => 0, # do not print
                 :print_type => 0, # one-sided print
                 :sender_type => 2, # from 1st page of the document
-                :recipient_type => 2
+                :recipient_type => 2,
+                :format => :xml
     }
 
 

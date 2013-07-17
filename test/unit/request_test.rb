@@ -8,7 +8,7 @@ module DopisOnlineClient
         FakeWeb.register_uri(:post, "https://online3.postservis.cz/dopisonline/donApi.php",
                              :body => File.read(File.join(File.dirname(__FILE__), '../fixtures/success.xml')))
 
-        DopisOnlineClient.base_uri 'https://online3.postservis.cz/dopisonline/donApi.php'
+        DopisOnlineClient.base_uri 'https://online3.postservis.cz/'
         DopisOnlineClient.auth('jmeno', 'heslo')
         @filename = File.join(File.dirname(__FILE__), '../fixtures/letter.pdf')
         @request = DopisOnlineClient::Request.new(@filename)

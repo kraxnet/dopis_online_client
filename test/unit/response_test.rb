@@ -12,14 +12,14 @@ module DopisOnlineClient
       assert_equal 0,     response.failure_code
       assert_nil          response.failure_message
 
-      assert_equal "testing.pdf",             response.filename
+      assert_equal "1234.pdf",                response.filename
       assert_equal 1,                         response.pages_count
-      assert_equal 20090608050001,            response.order_code
-      assert_equal "",                        response.tracking_number
+      assert_equal "20130717183959_77667",    response.order_code
+      assert_equal nil,                       response.tracking_number
   #    assert_equal Date.parse("2009-06-08"),  response.success_result["datumpodani"]
       assert_not_nil                          response.price
       assert_equal false,                     response.color
-      assert_equal 67,                        response.shipping_method
+      assert_equal "195",                     response.shipping_method
     end
 
     should "parse failure correctly" do
