@@ -5,10 +5,10 @@ module DopisOnlineClient
 
     context "Request#deliver" do
       setup do
-        FakeWeb.register_uri(:post, "https://online3.postservis.cz/cmdedopis/dopisonline.php",
+        FakeWeb.register_uri(:post, "https://online3.postservis.cz/dopisonline/donApi.php",
                              :body => File.read(File.join(File.dirname(__FILE__), '../fixtures/success.xml')))
 
-        DopisOnlineClient.base_uri 'https://online3.postservis.cz/cmdedopis'
+        DopisOnlineClient.base_uri 'https://online3.postservis.cz/dopisonline/donApi.php'
         DopisOnlineClient.auth('jmeno', 'heslo')
         @filename = File.join(File.dirname(__FILE__), '../fixtures/letter.pdf')
         @request = DopisOnlineClient::Request.new(@filename)

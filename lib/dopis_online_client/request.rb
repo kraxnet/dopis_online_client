@@ -10,8 +10,7 @@ module DopisOnlineClient
                 :coupon_type => 0, # do not print
                 :print_type => 0, # one-sided print
                 :sender_type => 2, # from 1st page of the document
-                :recipient_type => 2, # from 1st page of the document
-                :format => :xml
+                :recipient_type => 2
     }
 
 
@@ -74,11 +73,11 @@ module DopisOnlineClient
       xml = Builder::XmlMarkup.new( :indent => 2 )
       xml.instruct! :xml, :encoding => "UTF-8"
       xml.dataroot do |dataroot|
-        dataroot.tiskpoukazky  options.coupon_type
-        dataroot.typods  options.sender_type
-        dataroot.typadr  options.recipient_type
+        dataroot.tiskpoukazky options.coupon_type
+        dataroot.typtisku options.print_type
+        dataroot.typods options.sender_type
+        dataroot.typadr options.recipient_type
         dataroot.typvyplatneho  options.postage_type
-        dataroot.typvystupu  options.format.to_s
         dataroot.soubory  do |soubory|
           soubory.soubor(:mimeType => "", :name => @pdf_file_path.split("/").last) do |soubor|
             soubor.dataSoubor Base64.encode64(File.read(@pdf_file_path))
