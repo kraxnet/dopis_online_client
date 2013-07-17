@@ -1,5 +1,6 @@
 require 'builder'
 require 'base64'
+require 'ostruct'
 
 module DopisOnlineClient
   class Request
@@ -73,11 +74,29 @@ module DopisOnlineClient
       xml = Builder::XmlMarkup.new( :indent => 2 )
       xml.instruct! :xml, :encoding => "UTF-8"
       xml.dataroot do |dataroot|
-        dataroot.tiskpoukazky options.coupon_type
+        dataroot.typvyplatneho options.postage_type
         dataroot.typtisku options.print_type
+        dataroot.tiskpoukazky options.coupon_type
         dataroot.typods options.sender_type
         dataroot.typadr options.recipient_type
-        dataroot.typvyplatneho  options.postage_type
+        dataroot.odsid nil
+        dataroot.odsobrazek nil
+        dataroot.odsfirma nil
+        dataroot.odsosoba nil
+        dataroot.odsulice nil
+        dataroot.odscp nil
+        dataroot.odsco nil
+        dataroot.odsobec nil
+        dataroot.odspsc nil
+        dataroot.adrosloveni nil
+        dataroot.adrfirma nil
+        dataroot.adrosoba nil
+        dataroot.adrulice nil
+        dataroot.adrcp nil
+        dataroot.adrco nil
+        dataroot.adrobec nil
+        dataroot.adrpsc nil
+        dataroot.adriso nil
         dataroot.soubory  do |soubory|
           soubory.soubor(:mimeType => "", :name => @pdf_file_path.split("/").last) do |soubor|
             soubor.dataSoubor Base64.encode64(File.read(@pdf_file_path))
