@@ -1,5 +1,3 @@
-require 'crack'
-
 module DopisOnlineClient
   class Response
     attr_accessor :body, :code
@@ -22,22 +20,22 @@ module DopisOnlineClient
 
     # Jméno odeslaného souboru
     def filename
-      success_result["soubor"]
+      success_result["soubory"]["soubor"]["name"]
     end
 
     # Počet stránek
     def pages_count
-      success_result["pocetstranek"].to_i
+      success_result["pocet_stranek"].to_i
     end
 
     # Kód objednávky
     def order_code
-      success_result["kodobjednavky"].to_i
+      success_result["kod_objednavky"]
     end
 
     # Podací číslo
     def tracking_number
-      success_result["podacicislo"]
+      success_result["podaci_cislo"]
     end
 
     # Datum podání
