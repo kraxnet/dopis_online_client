@@ -1,12 +1,22 @@
-<?xml version="1.0" encoding="windows-1250"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <zakazka>
-<soubor type="string">testing.pdf</soubor>
-<pocetstranek type="integer">1</pocetstranek>
-<kodobjednavky type="string">20090608050001</kodobjednavky>
-<podacicislo type="string"></podacicislo>
-<datumpodani type="date">2009-06-08</datumpodani>
-<podaciposta type="string">370 20</podaciposta>
-<cena mena="CZK" type="decimal">14.05</cena>
-<barvatisku type="integer">0</barvatisku>
-<typvyplatneho type="integer">67</typvyplatneho>
+  <chyby stav="0">
+  </chyby>
+  <typvyplatneho>195</typvyplatneho>
+  <typtisku>0</typtisku>
+  <tiskpoukazky>0</tiskpoukazky>
+  <kod_objednavky>20130717183959_77667</kod_objednavky>
+  <podaci_cislo></podaci_cislo>
+  <podaci_posta>370 20</podaci_posta>
+  <datum_podani>2013-07-17</datum_podani>
+  <cena>11.31 Kč</cena>
+  <pocet_listu>1</pocet_listu>
+  <pocet_stranek>1</pocet_stranek>
+  <xmlsoubor>DopisOnlineNew_1_120130717-84759-1z06ta5.xml</xmlsoubor>
+  <soubory>
+    <soubor name="1234.pdf">
+    <pozice>1</pozice>
+      <pocet_stranek>1</pocet_stranek>
+    </soubor>
+  </soubory>
 </zakazka>

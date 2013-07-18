@@ -3,14 +3,15 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "dopis_online_client/version"
 
-Gem::Specification.new do |gem|
-  gem.name        = "dopis_online_client"
-  gem.version     = DopisOnlineClient::VERSION
-  gem.authors     = ["Jiri Kubicek"]
-  gem.email       = ["jiri.kubicek@kraxnet.cz"]
-  gem.homepage    = "http://github.com/kraxnet/dopis_online_client"
-  gem.summary     = %q{Dopis Online Client Library}
-  gem.description = %q{Klientská knihovna pro práci se službou Dopis Online České pošty}
+Gem::Specification.new do |s|
+  s.name        = "dopis_online_client"
+  s.version     = DopisOnlineClient::VERSION
+  s.platform    = Gem::Platform::RUBY
+  s.authors     = ["Jiri Kubicek", "Josef Pospisil"]
+  s.email       = ["jiri.kubicek@kraxnet.cz", "josef.pospisil@laststar.eu"]
+  s.homepage    = "http://github.com/kraxnet/dopis_online_client"
+  s.summary     = %q{Dopis Online Client Library}
+  s.description = %q{Klientská knihovna pro práci se službou Dopis Online České pošty}
 
   gem.rubyforge_project = "dopis_online_client"
 
@@ -24,17 +25,15 @@ Gem::Specification.new do |gem|
 
   gem.required_rubygems_version = ">= 1.3.6"
 
-  gem.add_dependency "rake",        ">= 0.8.0"
-  gem.add_dependency "bundler",     ">= 1.0"
-  gem.add_dependency "httmultiparty"
-  gem.add_dependency "crack"
+  s.add_dependency "rake",        ">= 0.8.0"
+  s.add_dependency "bundler",     ">= 1.0"
+  s.add_dependency "httmultiparty"
+  s.add_dependency "multi_xml"
+  s.add_dependency "builder"
 
-  if RUBY_VERSION < "1.9.0"
-    gem.add_development_dependency "rcov"
-    gem.add_development_dependency "shoulda-matchers", "1.4.2"
-  end
-  gem.add_development_dependency "turn", '< 0.8.3'
-  gem.add_development_dependency "shoulda"
-  gem.add_development_dependency "sdoc"
-  gem.add_development_dependency "fakeweb"
+  s.add_development_dependency "turn"
+  s.add_development_dependency "shoulda"
+  s.add_development_dependency "sdoc"
+  s.add_development_dependency "simplecov"
+  s.add_development_dependency "fakeweb"
 end
