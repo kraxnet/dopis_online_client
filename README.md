@@ -12,10 +12,8 @@ Vice informaci na https://online.postservis.cz/Download/DopisOnline/DopisOnline.
 
     DopisOnlineClient.base_uri 'https://online.postservis.cz/cmdedopis'
     DopisOnlineClient.auth('jmeno','heslo')
-    
-    DopisOnlineClient::Request.send(
-      :pdf_file_path=>"letter.pdf"
-    )
+
+    DopisOnlineClient::Request.send("letter.pdf")
 
 ## Copyright
 
