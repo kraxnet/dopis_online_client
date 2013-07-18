@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "dopis_online_client/version"
 
 Gem::Specification.new do |s|
@@ -12,17 +13,17 @@ Gem::Specification.new do |s|
   s.summary     = %q{Dopis Online Client Library}
   s.description = %q{Klientská knihovna pro práci se službou Dopis Online České pošty}
 
-  s.rubyforge_project = "dopis_online_client"
+  gem.rubyforge_project = "dopis_online_client"
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.require_paths = ["lib"]
+  gem.files         = `git ls-files`.split($/)
+  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  gem.require_paths = ["lib"]
 
-  s.extra_rdoc_files  = [ "README.rdoc", "LICENSE" ]
-  s.rdoc_options      = [ "--charset=UTF-8" ]
+  gem.extra_rdoc_files  = [ "README.rdoc", "LICENSE" ]
+  gem.rdoc_options      = [ "--charset=UTF-8" ]
 
-  s.required_rubygems_version = ">= 1.3.6"
+  gem.required_rubygems_version = ">= 1.3.6"
 
   s.add_dependency "rake",        ">= 0.8.0"
   s.add_dependency "bundler",     ">= 1.0"
