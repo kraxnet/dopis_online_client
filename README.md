@@ -4,7 +4,7 @@
 
 DopisOnline je služba České pošty, s.p., která "umožnuje zákazníkovi podání dokumentu v elektronické formě (formát PDF), přičemž dodáná je uskutečněno formou klasického vytištěného dopisu."
 
-Vice informaci na https://online.postservis.cz/Download/DopisOnline/DopisOnline.pdf
+Vice informaci na https://online.postservis.cz/Download/DopisOnline/DopisOnlineUzivatelskaPrirucka.pdf
 
 ## Usage:
 
