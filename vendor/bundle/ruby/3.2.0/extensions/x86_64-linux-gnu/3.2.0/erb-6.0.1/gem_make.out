@@ -4,16 +4,16 @@ checking for rb_ext_ractor_safe() in ruby.h... yes
 creating Makefile
 
 current directory: /home/runner/work/dopis_online_client/dopis_online_client/vendor/bundle/ruby/3.2.0/gems/erb-6.0.1/ext/erb/escape
-make DESTDIR\= sitearchdir\=./.gem.20260210-3825-86cthe sitelibdir\=./.gem.20260210-3825-86cthe clean
+make DESTDIR\= sitearchdir\=./.gem.20260210-5634-2us7o sitelibdir\=./.gem.20260210-5634-2us7o clean
 
 current directory: /home/runner/work/dopis_online_client/dopis_online_client/vendor/bundle/ruby/3.2.0/gems/erb-6.0.1/ext/erb/escape
-make DESTDIR\= sitearchdir\=./.gem.20260210-3825-86cthe sitelibdir\=./.gem.20260210-3825-86cthe
+make DESTDIR\= sitearchdir\=./.gem.20260210-5634-2us7o sitelibdir\=./.gem.20260210-5634-2us7o
 compiling escape.c
 linking shared-object erb/escape.so
 
 current directory: /home/runner/work/dopis_online_client/dopis_online_client/vendor/bundle/ruby/3.2.0/gems/erb-6.0.1/ext/erb/escape
-make DESTDIR\= sitearchdir\=./.gem.20260210-3825-86cthe sitelibdir\=./.gem.20260210-3825-86cthe install
-/usr/bin/install -c -m 0755 escape.so ./.gem.20260210-3825-86cthe/erb
+make DESTDIR\= sitearchdir\=./.gem.20260210-5634-2us7o sitelibdir\=./.gem.20260210-5634-2us7o install
+/usr/bin/install -c -m 0755 escape.so ./.gem.20260210-5634-2us7o/erb
 
 current directory: /home/runner/work/dopis_online_client/dopis_online_client/vendor/bundle/ruby/3.2.0/gems/erb-6.0.1/ext/erb/escape
-make DESTDIR\= sitearchdir\=./.gem.20260210-3825-86cthe sitelibdir\=./.gem.20260210-3825-86cthe clean
+make DESTDIR\= sitearchdir\=./.gem.20260210-5634-2us7o sitelibdir\=./.gem.20260210-5634-2us7o clean

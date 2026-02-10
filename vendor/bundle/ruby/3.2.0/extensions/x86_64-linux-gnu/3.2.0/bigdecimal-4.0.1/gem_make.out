@@ -22,17 +22,17 @@ checking for RB_WARN_CATEGORY_DEPRECATED in ruby.h... yes
 creating Makefile
 
 current directory: /home/runner/work/dopis_online_client/dopis_online_client/vendor/bundle/ruby/3.2.0/gems/bigdecimal-4.0.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20260210-3825-tunuzn sitelibdir\=./.gem.20260210-3825-tunuzn clean
+make DESTDIR\= sitearchdir\=./.gem.20260210-5634-aovda3 sitelibdir\=./.gem.20260210-5634-aovda3 clean
 
 current directory: /home/runner/work/dopis_online_client/dopis_online_client/vendor/bundle/ruby/3.2.0/gems/bigdecimal-4.0.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20260210-3825-tunuzn sitelibdir\=./.gem.20260210-3825-tunuzn
+make DESTDIR\= sitearchdir\=./.gem.20260210-5634-aovda3 sitelibdir\=./.gem.20260210-5634-aovda3
 compiling bigdecimal.c
 compiling missing.c
 linking shared-object bigdecimal.so
 
 current directory: /home/runner/work/dopis_online_client/dopis_online_client/vendor/bundle/ruby/3.2.0/gems/bigdecimal-4.0.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20260210-3825-tunuzn sitelibdir\=./.gem.20260210-3825-tunuzn install
-/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20260210-3825-tunuzn
+make DESTDIR\= sitearchdir\=./.gem.20260210-5634-aovda3 sitelibdir\=./.gem.20260210-5634-aovda3 install
+/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20260210-5634-aovda3
 
 current directory: /home/runner/work/dopis_online_client/dopis_online_client/vendor/bundle/ruby/3.2.0/gems/bigdecimal-4.0.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20260210-3825-tunuzn sitelibdir\=./.gem.20260210-3825-tunuzn clean
+make DESTDIR\= sitearchdir\=./.gem.20260210-5634-aovda3 sitelibdir\=./.gem.20260210-5634-aovda3 clean

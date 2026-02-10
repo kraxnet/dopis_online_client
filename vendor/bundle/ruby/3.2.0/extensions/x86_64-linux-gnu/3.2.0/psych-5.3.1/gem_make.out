@@ -3,13 +3,13 @@ current directory: /home/runner/work/dopis_online_client/dopis_online_client/ven
 creating Makefile
 
 current directory: /home/runner/work/dopis_online_client/dopis_online_client/vendor/bundle/ruby/3.2.0/gems/psych-5.3.1/ext/psych
-make DESTDIR\= sitearchdir\=./.gem.20260210-3825-x8bzln sitelibdir\=./.gem.20260210-3825-x8bzln clean
+make DESTDIR\= sitearchdir\=./.gem.20260210-5634-s9n602 sitelibdir\=./.gem.20260210-5634-s9n602 clean
 cd libyaml && make clean
 /bin/sh: 1: cd: can't cd to libyaml
 make: [Makefile:283: clean-so] Error 2 (ignored)
 
 current directory: /home/runner/work/dopis_online_client/dopis_online_client/vendor/bundle/ruby/3.2.0/gems/psych-5.3.1/ext/psych
-make DESTDIR\= sitearchdir\=./.gem.20260210-3825-x8bzln sitelibdir\=./.gem.20260210-3825-x8bzln
+make DESTDIR\= sitearchdir\=./.gem.20260210-5634-s9n602 sitelibdir\=./.gem.20260210-5634-s9n602
 compiling psych.c
 compiling psych_emitter.c
 compiling psych_parser.c
@@ -18,11 +18,11 @@ compiling psych_yaml_tree.c
 linking shared-object psych.so
 
 current directory: /home/runner/work/dopis_online_client/dopis_online_client/vendor/bundle/ruby/3.2.0/gems/psych-5.3.1/ext/psych
-make DESTDIR\= sitearchdir\=./.gem.20260210-3825-x8bzln sitelibdir\=./.gem.20260210-3825-x8bzln install
-/usr/bin/install -c -m 0755 psych.so ./.gem.20260210-3825-x8bzln
+make DESTDIR\= sitearchdir\=./.gem.20260210-5634-s9n602 sitelibdir\=./.gem.20260210-5634-s9n602 install
+/usr/bin/install -c -m 0755 psych.so ./.gem.20260210-5634-s9n602
 
 current directory: /home/runner/work/dopis_online_client/dopis_online_client/vendor/bundle/ruby/3.2.0/gems/psych-5.3.1/ext/psych
-make DESTDIR\= sitearchdir\=./.gem.20260210-3825-x8bzln sitelibdir\=./.gem.20260210-3825-x8bzln clean
+make DESTDIR\= sitearchdir\=./.gem.20260210-5634-s9n602 sitelibdir\=./.gem.20260210-5634-s9n602 clean
 cd libyaml && make clean
 /bin/sh: 1: cd: can't cd to libyaml
 make: [Makefile:283: clean-so] Error 2 (ignored)
