@@ -5,8 +5,8 @@ module DopisOnlineClient
 
     context "Request#deliver" do
       setup do
-        FakeWeb.register_uri(:post, "https://online3.postservis.cz/dopisonline/donApi.php",
-                             :body => File.read(File.join(File.dirname(__FILE__), '../fixtures/success.xml')))
+        stub_request(:post, "https://online3.postservis.cz/dopisonline/donApi.php")
+          .to_return(body: File.read(File.join(File.dirname(__FILE__), '../fixtures/success.xml')))
 
         DopisOnlineClient.base_uri 'https://online3.postservis.cz/'
         DopisOnlineClient.auth('jmeno', 'heslo')
